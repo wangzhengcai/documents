@@ -1,0 +1,12 @@
+Create New Eclipse Workspace - With All Your Old Settings
+
+original link:
+https://dzone.com/articles/create-new-eclipse-workspace-w
+
+The short answer
+
+All settings are stored in the .metadata/.plugins/org.eclipse.core.runtime/.settings directory. I mean -- all relevant settings. If you look into .metadata/.plugins directory there are many more directories with settings, but they are too project specific. I've walked trough these configuration files one by one, believe me, nothing useful lies hidden there.
+
+So the short answer is: If you want to create a new eclipse workspace and preserve all your settings, simply copy the .metadata/.plugins/org.eclipse.core.runtime/.settings directory into your new workspace directory.
+
+Do not copy other directories! There are project specific settings and since your old projects are left in your old workspace, the copied settings would not be valid and you would get some nasty exceptions at eclipse startup.
